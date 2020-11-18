@@ -1,0 +1,66 @@
+#header {
+/*    background : #ff9918;*/
+/*    background : #cf833d;*/
+/*    background : #c7634c;*/
+/*    background : #074b78;*/
+    background : #003163;
+    color : #fff;
+    padding : 15px 30px;
+    position : absolute;
+    top : 0px;
+    right : 0px;
+    height : 30px;
+    left : 0px;
+}
+#header table {
+    border-spacing : 0px;
+    height : 30px;
+}
+#header-nav {
+    display : flex;
+}
+.header-nav {
+/*    color : #789;*/
+/*    border-bottom : 2px solid #ff9918;*/
+/*    border-bottom : 2px solid #cf833d;*/
+/*    border-bottom : 2px solid #c7634c;*/
+/*    border-bottom : 2px solid #074b78;*/
+    border-bottom : 2px solid #003163;
+    cursor : pointer;
+    font-size : 16px;
+    font-weight : 300;
+    line-height : 16px;
+    padding : 4px 0px 0px 0px;
+    margin : auto;
+    text-align : center;
+/*    flex : 1;*/
+}
+.header-nav:hover {
+    border-color : white;
+/*    border-color : #1858a8;*/
+}
+#header-logo {
+    cursor : pointer;
+    height : 30px;
+    position : absolute;
+    top : 16px;
+}
+#header-tools {
+/*    color : #666;*/
+    font-size : 30px;
+    position : absolute;
+    top : 10px;
+    right : 35px;
+}
+#header-tools > i {
+    cursor : pointer;
+    margin-left : 15px;
+}
+#header-cell-logo,
+#header-cell-actions {
+    width : 200px;
+}
+#header-cell-nav {
+    text-align : center;
+    width : 500px;
+}

@@ -1,0 +1,119 @@
+#landing {
+/*    background : #f1f3f5;*/
+    padding : 0px;
+}
+#landing-graphic {
+/*    background-image: url("../images/nav/main.jpg");*/
+   /* height : 460px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 100%;
+    text-align : right;
+    padding : 120px;
+    color : white;
+    font-size : 6em;
+    line-height : 1em;
+    font-weight : 200;*/
+    
+    
+    
+/*    color: white;*/
+/*    font-size: 6em;*/
+/*    line-height: 1em;*/
+  /*  font-weight: 200;*/
+/*    overflow: hidden;*/
+/*
+    position : absolute;
+    top: 0px;
+    bottom: 200px;
+*/
+    
+}
+#landing-graphic > img {
+/*    width :  100% !important;*/
+    height: 100%;
+    max-height : 550px;
+    object-fit: cover;
+    width: 100%;
+
+/*    opacity: 0.8;*/
+}
+#landing-message {
+    background : #fff;
+    color : #96979c;
+    float : right;
+    font-size : 30px;
+    font-weight : 300;
+    padding : 80px 120px 60px 40px;
+    width : 30%;
+/*    margin : 30px 70px 10px;*/
+/*    text-align : center;*/
+}
+#landing-nav {
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    position : relative;
+    top : -100px;
+    padding : 0px 40px 40px 80px;
+    width : calc(70% - 280px);
+}
+
+.tile-head {
+/*    background : #074b78;*/
+    background : #003163;
+    text-align: center;
+}
+.tile-icon {
+    max-height : 150px;
+    max-width : 150px;
+}
+
+#landing-nav .tile {
+    box-shadow : 2px 2px 14px #e1e1e1;
+    flex-grow : 1;
+    justify-content: space-around;
+    max-width : 240px;
+    min-width : 180px;
+    width:37%;
+}
+#landing-nav .tile-title {
+    font-weight : 600;
+    margin : auto;
+    padding : 20px 0px 0px;
+    width : 80%;
+}
+#landing-nav .tile-detail {
+    font-size : 13px;
+    font-weight : 300;
+    line-height : 16px;
+    margin : 5px auto 20px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    width : 70%;
+}
+    
+.tile-link {
+    border-top : 1px solid #eee;
+    font-weight : 300;
+    margin : auto;
+    overflow : hidden;
+    padding : 14px;
+    text-align : center;
+    text-overflow: ellipsis;
+    white-space : nowrap;
+    width : calc(80% - 20px)
+}
+
+#theme {
+    position: absolute;
+    top: 80px;
+    left: 140px;
+    color: white;
+    font-size: 64px;
+    font-weight: 200;
+    letter-spacing : -1px;
+}
+#theme span {
+    font-weight : 600;
+}

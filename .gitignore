@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/InventorDA/obj
+/InventorDA/Properties
+/InventorDA/wwwroot/Bundle
+/InventorDA/wwwroot/images
+/packages/Newtonsoft.Json.11.0.2
+/UpdateParams/obj
+/InventorDA/bin
+/InventorDA/.config
+/.vs

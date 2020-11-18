@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>The Fusion Store</title>
+        <meta charset="utf-8" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+        <script src="js/jquery-3.3.1.min.js"></script>
+        
+        <!-- Autodesk Forge Viewer files -->
+        <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/style.min.css" type="text/css">
+        <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/viewer3D.min.js"></script>
+        <script src="//unpkg.com/@aspnet/signalr@1.1.0/dist/browser/signalr.min.js"></script>
+        <script src="/js/forge.js"></script>
+        <script src="/js/ui.js"></script>
+        
+        
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/landing.css">
+        <link rel="stylesheet" href="css/product.css">
+        <link rel="stylesheet" href="css/viewer.css">
+        <link rel="stylesheet" href="css/footer.css">
+
+    </head>
+    
+    <body>
+        <iframe id="frame-download" name="frame-download" src=""></iframe>
+        
+        <div id="header">
+            <table>
+                <tr>
+                    <td id="header-cell-logo">
+                        <img id="header-logo" src="images/nav/logo.png">
+                    </td>
+                    <td></td>
+                    <td id="header-cell-nav">
+                        <div id="header-nav">
+                            <div class="header-nav nav-industries">Industries</div>
+                            <div class="header-nav nav-lines">Product Lines</div>
+                            <div class="header-nav nav-products">Products</div>
+                            <div class="header-nav">News</div>
+                        </div>
+                    </td>
+                     <td></td>
+                    <td id="header-cell-actions">
+                        <div id="header-tools">
+                            <i id="header-search" class="zmdi zmdi-search"></i>
+                            <i id="header-account" class="zmdi zmdi-account-box-o"></i>
+                            <i id="header-help" class="zmdi zmdi-help"></i>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="back"></div>
+        
+        <div id="main">
+            <div class="content" id="landing">
+                <div id="landing-graphic">
+                    <img src="images/nav/main.jpg">
+                    <div id="theme">We <span>CONNECT</span><br>Anything</div>
+                </div>
+                <div id="landing-message">We continuously strive for perfection. Let our passion drive your success.</div>
+                <div id="landing-nav">
+                    <div class="tile nav-industries">
+                        <div class="tile-head"><img class="tile-icon" src="images/nav/nav-industries.png"></div>
+                        <div class="tile-title">Industries</div>
+                        <div class="tile-detail">Our material handling equipments serve a wide range of industries</div>
+                        <div class="tile-link link">Browse Industries</div>
+                    </div> 
+                    <div class="tile nav-lines">
+                        <div class="tile-head"><img class="tile-icon" src="images/nav/nav-products.png"></div>
+                        <div class="tile-title">Products</div>
+                        <div class="tile-detail">As market leader, we also offer products to address you needs</div>
+                        <div class="tile-link link">Browse all products</div>
+                    </div>
+                    <div class="tile nav-products">
+                        <div class="tile-head"><img class="tile-icon" src="images/nav/nav-services.png"></div>
+                        <div class="tile-title"> Services</div>
+                        <div class="tile-detail">Long term trusted partnerships are key for both our success</div>
+                        <div class="tile-link link">See list of services</div>
+                    </div>
+                    <div class="tile" id="nav-configurator">
+                        <div class="tile-head"><img class="tile-icon" src="images/nav/nav-success.png"></div>
+                        <div class="tile-title"> Success</div>
+                        <div class="tile-detail">Industry market leaders rely on our solutions</div>
+                        <div class="tile-link link">See reference projects</div>
+                    </div>
+                </div>
+            </div>
+            <div class="content" id="industries">
+                <div class="content-header">
+                    <div class="content-title">Industries</div>
+                    <div class="content-subtitle">Our material handling equipments serve a wide range of industries. Choose yours to explore our offerings for you.</div>
+                </div>
+                <div class="content-list" id="industries-list"></div>
+            </div>
+            <div class="content" id="lines">
+                <div class="content-header">
+                    <div class="content-title">Product Lines</div>
+                    <div class="content-subtitle">As market leader, we offer products to address various needs. Browse our portfolio to improve your company's success.</div>
+                    <div class="content-path link" data-id="industries"><i class="zmdi zmdi-caret-left-circle"></i>Return to Industries</div>
+                </div>
+                <div class="content-list" id="lines-list"></div>
+            </div>
+            
+            <div class="content" id="products">
+                <div class="content-header">
+                    <div class="content-title">All Products</div>
+                    <div class="content-subtitle">Explore our portfolio consisting of standard products and custom built solutions. Configure the products on your needs and receive our quite within few business hours.</div>
+                    <div class="content-path link" data-id="lines"><i class="zmdi zmdi-caret-left-circle"></i>Return to Product Lines</div>
+                </div>
+                <div class="content-list" id="products-list"></div>
+            </div>
+            
+            <div class="content" id="product">
+                
+                <div id="product-viewer">
+                    <div id="viewer"></div>
+                </div>
+                <div id="product-images"  class="product-panel"></div>
+                
+                <div class="button" id="product-slider-prev" ><i class="zmdi zmdi-chevron-left"></i>Previous</div>
+                <span id="product-slider-list"><i class="zmdi zmdi-dot-circle"></i></span>
+                <div class="button" id="product-slider-next" >Next <i class="zmdi zmdi-chevron-right"></i></div>
+                
+                <div id="product-panel">
+                    
+                    <div id="product-head">
+                        <div id="product-back" class="link"><i class="zmdi zmdi-caret-left-circle"></i>Return to Products</div>
+                        <div id="product-line" class="nowrap"></div>
+                        <div id="product-title" class="nowrap"></div>
+                        
+<!--                        <div id="product-close" class="button"><i class="zmdi zmdi-close"></i></div>-->
+                    </div>
+
+                    
+                    
+
+                    <div id="product-details">
+                        <div id="product-text"></div>
+                        <div id="product-specification" class="product-panel">
+                            <div id="product-specification-head" class="product-heading expanded"><i class="zmdi zmdi-chevron-down"></i><i class="zmdi zmdi-chevron-right"></i>Technical Specification</div>
+                            <div id="product-specification-list"></div>
+                        </div>
+                        <div id="product-files"  class="product-panel">
+                            <div id="product-files-head" class="product-heading expanded"><i class="zmdi zmdi-chevron-down"></i><i class="zmdi zmdi-chevron-right"></i>Documentation</div>
+                            <div id="product-files-list"></div>
+                        </div>
+                    </div>
+
+                    <div id="product-options"></div>
+
+<!--                    <div class="product-toolbar" id="product-toolbar-configurator">-->
+
+<!--                    </div>-->
+                    <div class="product-toolbar" id="product-toolbar">
+                        <div id="button-cancel"  class="button icon left"><i class="zmdi zmdi-chevron-left"></i>Return</div>
+                        <div id="button-reset" class="button icon left  disabled"><i class="zmdi zmdi-time-restore-setting"></i>Reset</div>
+                        <div id="button-apply" class="button icon left configurator disabled"><i class="zmdi zmdi-memory"></i>Update Design</div> 
+                        <div id="button-download-pdf"  class="button icon left download" data-extension=".pdf"><i class="zmdi zmdi-download"></i>Get 2D</div>
+                        <div id="button-download-ipt"   class="button icon left download" data-extension=".dwf"><i class="zmdi zmdi-download"></i>Get 3D</div>
+                        <div id="button-configure" class="button icon right">Configure<i class="zmdi zmdi-chevron-right"></i></div>
+                        <div id="button-request-quote" class="button icon left default"><i class="zmdi zmdi-forward"></i>Request Quote</div>
+                    </div>
+                    
+                </div>
+                <div id="product-background"></div>
+                
+            </div>
+            
+            <div id="processing" class="dialog">
+                <div id="processing-animation"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></div>
+                <div id="processing-title">Processing your request</div>
+                <div id="processing-text">Please be patient, this process may take a couple of minutes. Do not close or refresh this page.</div>
+                <div id="processing-cancel" class="button">Cancel</div>
+            </div>
+            
+            <div id="request-dialog" class="dialog">
+                <div id="request-header">
+                    <div id="request-title">Quote Request</div>
+                    <div id="request-close" class="zmdi zmdi-close"></div>
+                </div>
+                <div id="request-content">
+                    <div id="request-message">Thank you for making use of our configuator. We are aiming to process your request within one business day. In the meantime, a copy of this request will be sent to your mail address.</div>
+                    <div class="request-heading expanded"><i class="zmdi zmdi-chevron-down"></i><i class="zmdi zmdi-chevron-right"></i>Your Configuration</div>
+                    <div id="request-configuration">
+                        <div id="request-image"></div>
+                        <div id="request-options">
+<!--                            <div id="request-options-head">Selected Options</div>-->
+<!--                            <div id="request-options-list"></div>-->
+                        </div>
+                    </div>
+                    <div class="request-heading expanded"><i class="zmdi zmdi-chevron-down"></i><i class="zmdi zmdi-chevron-right"></i>Your Contact Details</div>
+                    <div id="request-contact">
+                        <table>
+                            <tr>
+                                <td class="request-label">Company</td>
+                                <td class="request-value"><input id="input-company" name="company" palaceholder="Your Company's Name"></td>
+                            </tr>                           
+                            <tr>
+                                <td class="request-label">Name</td>
+                                <td class="request-value"><input id="input-name" name="name" palaceholder="Your First Name and Last Name"></td>
+                            </tr>
+                            <tr>
+                                <td class="request-label">Title</td>
+                                <td class="request-value"><input id="input-title" name="title" palaceholder="Your Title"></td>
+                            </tr>
+                            <tr>
+                                <td class="request-label">Mail Address</td>
+                                <td class="request-value"><input id="input-mail"  name="mail" palaceholder="Your mail address to receive our response"></td>
+                            </tr>
+                            <tr>
+                                <td class="request-label">Phone Number</td>
+                                <td class="request-value"><input id="input-phone" name="phone" palaceholder="Your Phone Number"></td>
+                            </tr>
+                            <tr>
+                                <td class="request-label">Address</td>
+                                <td class="request-value"><textarea id="input-address" name="address" palaceholder="Your Site's Address" rows="4"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td class="request-label">Country</td>
+                                <td class="request-value"><input id="input-country" name="address" palaceholder="Your Country"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="request-heading expanded"><i class="zmdi zmdi-chevron-down"></i><i class="zmdi zmdi-chevron-right"></i>Additional Information</div>
+                    <div id="request-additions">
+                        <table>
+                            <tr>
+                                <td class="request-label">Remarks</td>
+                                <td class="request-value"><textarea id="input-remarks" name="remarks" placeholder="Provide further details about your request here"></textarea></td>
+                            </tr>                           
+                            <tr>
+                                <td class="request-label">Attachments</td>
+                                <td class="request-value"><div id="request-attachments">Drop files to be shared as part of this request</div>
+<!--                                    <input type="file" id="myFile" name="filename">-->
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="request-consent">
+                        <div>
+                            <i id="consent-off" class="zmdi zmdi-circle-o"></i>
+                            <i id="consent-on" class="zmdi zmdi-check-circle"></i>
+                        </div>
+                        <div>I consent to be contacted by mail and phone as part of this request by Autodesk</div>
+                    </div>
+                </div>
+                <div id="request-footer">
+                    <div id="request-send" class="button default">Send Request</div>
+                    <div id="request-cancel" class="button">Cancel</div>
+                </div>
+                
+            </div>
+            
+            <div id="request-process" class="dialog">
+                <i class="zmdi zmdi-spinner zmdi-hc-spin"></i>
+                Submitting your request
+            </div>    
+            
+            <div id="request-confirmation" class="dialog">
+                <div id="request-confirmation-icon"><i class="zmdi zmdi-info-outline"></i></div>
+                <div id="request-confirmation-title">Thank you</div>
+                <div id="request-confirmation-message">Your request has been submitted</div>
+                <div id="request-confirmation-button" class="button">Close</div>
+            </div>
+
+            <div id="footer">
+                <table>
+                    <tr>
+                        <th>Contact</th>
+                        <th>Company</th>
+                        <th>Follow</th>
+                    </tr><tr>
+                        <td>Sales</td>
+                        <td>About Us</td>
+                        <td><i class="zmdi zmdi-facebook-box"></i>Facebook</td>    
+                    </tr><tr>
+                        <td>Support</td>
+                        <td>News</td>
+                        <td><i class="zmdi zmdi-instagram"></i>Instrgram</td>                    
+                    </tr><tr>
+                        <td>Marketing</td>
+                        <td>Careers</td>
+                        <td><i class="zmdi zmdi-twitter-box"></i>Twitter</td>                    
+                    </tr><tr>
+                        <td>Impress</td>
+                        <td>Investors</td>
+                        <td><i class="zmdi zmdi-linkedin-box"></i>Linked In</td>      
+                    </tr>
+                </table>    
+                <div class="copyright">© Copyright 2020 by Autodesk Tech Sales</div>    
+            </div>
+        </div>
+        
+        
+        
+    </body>
+    
+</html>

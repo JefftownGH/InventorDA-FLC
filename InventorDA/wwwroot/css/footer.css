@@ -1,0 +1,30 @@
+#footer {
+    background : #dedfe4;
+    color : #555;
+    font-weight : 300;
+    padding : 50px;
+}
+
+#footer table,
+.copyright {
+    margin : auto;
+    width : 900px;
+}
+
+#footer table th {
+    font-weight : 800;
+    text-align : left;
+}
+#footer table td {
+    cursor : pointer;
+    width : 30%;
+}
+#footer i {
+    margin : 0px 5px 0px 3px;
+}
+
+.copyright {
+    border-top : 1px solid #aaa;
+    margin-top : 40px;
+    padding : 20px 0px;
+}

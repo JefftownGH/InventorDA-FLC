@@ -1,0 +1,56 @@
+/* FORGE VIEWER */
+
+#navTools {
+    display : none !important;
+}
+#guiviewer3d-toolbar {
+/*    background : rgba(46,46,46,0.8);*/
+/*    background : rgba(34,34,34,.9);*/
+/*    background : white;*/
+    background : #dcdfe4;
+    left : 0px;
+    right : 0px;
+    padding : 8px 92px 0px 115px
+}
+.viewer-fill-browser #guiviewer3d-toolbar {
+    padding : 12px 16px 16px 16px;
+}
+
+.adsk-viewing-viewer.dark-theme .adsk-control-group {
+    background-color: transparent;
+    box-shadow: none;
+}
+.adsk-viewing-viewer .adsk-toolbar {
+    bottom : -9px;
+    width : auto;
+}
+.adsk-viewing-viewer.dark-theme .adsk-button.active, .adsk-viewing-viewer.dark-theme .adsk-button:focus {
+    background : white;
+    color : #0696d7;
+    box-shadow : none;
+}
+.progressbg {
+    display : none !important;
+}
+
+
+.adsk-viewing-viewer .adsk-button {
+    background : white;
+    border: 1px solid #bec8d2;
+    border-radius: 3px;
+    color : #333;
+    padding : 7px;
+}
+.adsk-viewing-viewer .adsk-button:hover {
+    border-color : #0696d7 !important;
+    color : #333 !important;
+}
+
+.adsk-toolbar .adsk-control-group {
+    margin : 0px;
+}
+
+.adsk-viewing-viewer.dark-theme .adsk-label-button label {
+    background-color : #fff;
+    color : #333;
+}
